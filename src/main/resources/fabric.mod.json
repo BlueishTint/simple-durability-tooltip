@@ -19,7 +19,7 @@
 	"mixins": ["simple_durability_tooltip.mixins.json"],
 
 	"depends": {
-		"fabricloader": ">=0.14.9",
-		"minecraft": ">=1.14"
+		"fabricloader": ">=0.15",
+		"minecraft": ">=1.21"
 	}
 }
