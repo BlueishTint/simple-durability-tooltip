@@ -3,8 +3,7 @@ plugins {
 	id 'net.fabricmc.fabric-loom' version "${loom_version}"
 }
 
-archivesBaseName = project.archives_base_name
-version = "${project.version}"
+version = project.mod_version
 group = project.maven_group
 
 repositories {
@@ -23,6 +22,7 @@ dependencies {
 }
 
 processResources {
+	def version = project.version
 	inputs.property "version", version
 
 	filesMatching('*.mod.json') {
@@ -46,7 +46,10 @@ java {
 }
 
 jar {
+	def projectName = project.name
+	inputs.property "projectName", projectName
+
 	from("LICENSE") {
-		rename { "${it}_${archivesBaseName}" }
+		rename { "${it}_$projectName" }
 	}
 }
