@@ -31,7 +31,7 @@ public abstract class ItemStackMixin {
 
 	@Inject(
 		method = "addDetailsToTooltip",
-		at = @At(value = "INVOKE", target = "Lnet/minecraft/client/item/TooltipFlag;isAdvanced()Z")
+		at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/TooltipFlag;isAdvanced()Z")
 	)
 	public void simple_durability_tooltip$getTooltip(Item.TooltipContext context, TooltipDisplay display, @Nullable Player player, TooltipFlag tooltipFlag,
 			Consumer<Component> builder, CallbackInfo ci) {
